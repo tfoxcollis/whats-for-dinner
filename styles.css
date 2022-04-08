@@ -76,3 +76,10 @@ form input {
   border-radius: 5px;
   border-style: none;
 }
+
+.dish-display {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

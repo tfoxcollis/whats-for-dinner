@@ -13,20 +13,24 @@
       <section class="box">
         <form>
           <h2>What are you looking for?</h2>
-          <input type="radio" id="side" name="side" value="side">
+          <input type="radio" id="side" name="dish" value="side">
           <label for="side">Side</label><br>
-          <input type="radio" id="main" name="main" value="main">
+          <input type="radio" id="main" name="dish" value="main">
           <label for="main">Main Dish</label><br>
-          <input type="radio" id="dessert" name="dessert" value="dessert">
+          <input type="radio" id="dessert" name="dish" value="dessert">
           <label for="dessert">Dessert</label><br>
-          <input type="radio" id="entire-dish" name="entire-dish" value="entire-dish">
+          <input type="radio" id="entire-dish" name="dish" value="entire-dish">
           <label for="entire-dish">Entire Dish</label><br>
           <input class="button-submit" type="submit" value="Lets Cook!">
         </form>
         <!-- <button class="button">LET'S COOK!</button> -->
       </section>
       <section class="box">
-        <img id="cookpot" src="./assets/cookpot.svg">
+        <img class="pot" id="cookpot" src="./assets/cookpot.svg">
+        <section class="dish-display">
+          <p> You should make: </p>
+          <h2 class="dish-name"></h2>
+        </section>
       </section>
     </section>
   </body>
