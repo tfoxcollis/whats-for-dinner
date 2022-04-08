@@ -6,6 +6,8 @@ var letsCookButton = document.querySelector(".button-submit");
 var cookPot = document.querySelector("#cookpot");
 var dishDisplay = document.querySelector(".dish-display");
 var dishName = document.querySelector(".dish-name");
+var displayButton = document.querySelector(".button");
+
 var sides = ["Miso Glazed Carrots",
 "Coleslaw",
 "Garden Salad",
@@ -59,6 +61,19 @@ letsCookButton.addEventListener("click", () => {
     dishName.innerHTML = randomRecipe;
     dishDisplay.style.display = "flex";
   }
+  if(radioMainDish.checked === true){
+    var randomRecipe = mainDish[getRandomIndex(mainDish)];
+    cookPot.style.display = "none";
+    dishName.innerHTML = randomRecipe;
+    dishDisplay.style.display = "flex";
+  }
+  if(radioDessert.checked === true){
+    var randomRecipe = dessert[getRandomIndex(dessert)];
+    cookPot.style.display = "none";
+    dishName.innerHTML = randomRecipe;
+    dishDisplay.style.display = "flex";
+  }
+  displayButton.style.display = "flex";
 })
 
 

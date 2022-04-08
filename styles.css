@@ -61,6 +61,14 @@ red - #ee5253
   padding-top: 15px;
 }
 
+.box:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
 form label {
   font-size: 20px;
 }
@@ -79,7 +87,25 @@ form input {
 
 .dish-display {
   display: none;
+  height: 70%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.button {
+  width: 75%;
+  height: 23%;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.clear-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: black;
+  background-color: initial;
+  border-radius: 5px;
 }
