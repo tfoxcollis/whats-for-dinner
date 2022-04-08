@@ -109,3 +109,7 @@ form input {
   background-color: initial;
   border-radius: 5px;
 }
+
+.dish-display {
+  text-align: center;
+}
