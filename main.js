@@ -8,7 +8,8 @@ var dishDisplay = document.querySelector(".dish-display");
 var dishName = document.querySelector(".dish-name");
 var displayButton = document.querySelector(".button");
 var clearButton = document.querySelector(".clear-button");
-
+var findAllRadio = document.querySelectorAll(".radiodish");
+var randomRecipe
 var sides = ["Miso Glazed Carrots",
 "Coleslaw",
 "Garden Salad",
@@ -53,31 +54,16 @@ var dessert = ["Apple Pie",
 "Tart Tatin",
 "Croissants",
 "Eclairs"]
-
+var randomSide = sides[getRandomIndex(sides)];
+var randomMainDish = mainDish[getRandomIndex(mainDish)];
+var randomDessert = dessert[getRandomIndex(dessert)];
 letsCookButton.addEventListener("click", () => {
   event.preventDefault()
-  if(radioSide.checked === true){
-    var randomRecipe = sides[getRandomIndex(sides)];
-    cookPot.style.display = "none";
-    dishName.innerHTML = randomRecipe;
-    dishDisplay.style.display = "flex";
-  }
-  if(radioMainDish.checked === true){
-    var randomRecipe = mainDish[getRandomIndex(mainDish)];
-    cookPot.style.display = "none";
-    dishName.innerHTML = randomRecipe;
-    dishDisplay.style.display = "flex";
-  }
-  if(radioDessert.checked === true){
-    var randomRecipe = dessert[getRandomIndex(dessert)];
-    cookPot.style.display = "none";
-    dishName.innerHTML = randomRecipe;
-    dishDisplay.style.display = "flex";
-  }
+  var checkedItem = findCheckedItem();
+  setRandomRecipe(checkedItem);
+  toggleCookPot();
+
   if(radioEntireDish.checked === true){
-    var randomSide = sides[getRandomIndex(sides)];
-    var randomMainDish = mainDish[getRandomIndex(mainDish)];
-    var randomDessert = dessert[getRandomIndex(dessert)];
     cookPot.style.display = "none";
     dishName.innerHTML = `${randomSide}, ${randomMainDish}, ${randomDessert}`
     dishDisplay.style.display = "flex";
@@ -94,4 +80,28 @@ clearButton.addEventListener("click", () => {
 // Functions
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+}
+
+function findCheckedItem(){
+  var arr = Array.from(findAllRadio)
+  return arr.find(item => item.checked === true)
+}
+
+function toggleCookPot() {
+  cookPot.style.display = "none";
+  dishName.innerHTML = randomRecipe;
+  dishDisplay.style.display = "flex";
+}
+
+function setRandomRecipe(checkedItem) {
+  var randomRecipe = randomSide;
+  var randomRecipe = randomMainDish;
+  var randomRecipe = randomDessert;
+  if(checkedItem.value === "sides") {
+    var randomRecipe = randomSide;
+  }else if(checkedItem.value === "mainDish") {
+    var randomRecipe = randomMainDish;
+  }else if(checkItem.value === "dessert") {
+    var randomRecipe = randomDessert;
+  }
 }
