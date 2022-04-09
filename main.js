@@ -10,11 +10,12 @@ var randomSide = sides[getRandomIndex(sides)];
 var randomMainDish = mainDish[getRandomIndex(mainDish)];
 var randomDessert = dessert[getRandomIndex(dessert)];
 
-
 letsCookButton.addEventListener("click", () => {
   event.preventDefault()
   var checkedItem = findCheckedItem();
-  
+  if(!findCheckedItem()){
+    return alert ("Please make a selection!")
+  }
   setRandomRecipe(checkedItem);
   toggleCookPot();
 })
