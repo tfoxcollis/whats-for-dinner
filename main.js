@@ -6,9 +6,6 @@ var displayButton = document.querySelector(".button");
 var clearButton = document.querySelector(".clear-button");
 var findAllRadio = document.querySelectorAll(".radiodish");
 var randomRecipe
-var randomSide = sides[getRandomIndex(sides)];
-var randomMainDish = mainDish[getRandomIndex(mainDish)];
-var randomDessert = dessert[getRandomIndex(dessert)];
 
 letsCookButton.addEventListener("click", () => {
   event.preventDefault()
@@ -42,14 +39,26 @@ function toggleCookPot() {
   displayButton.style.display = "flex";
 }
 
+function randomSide() {
+  return sides[getRandomIndex(sides)]
+}
+
+function randomMainDish() {
+  return mainDish[getRandomIndex(mainDish)];
+}
+
+function randomDessert() {
+  return dessert[getRandomIndex(dessert)];
+}
+
 function setRandomRecipe(checkedItem) {
   if(checkedItem.value === "sides") {
-    randomRecipe = randomSide;
+    randomRecipe = randomSide();
   }else if(checkedItem.value === "mainDish") {
-    randomRecipe = randomMainDish;
+    randomRecipe = randomMainDish();
   }else if(checkedItem.value === "dessert") {
-    randomRecipe = randomDessert;
+    randomRecipe = randomDessert();
   }else if(checkedItem.value === "entire-dish") {
-    randomRecipe = `${randomSide}, ${randomMainDish}, ${randomDessert}`
+    randomRecipe = `${randomSide()}, ${randomMainDish()}, ${randomDessert()}`
   }
 }
