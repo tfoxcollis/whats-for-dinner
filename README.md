@@ -27,11 +27,11 @@ Help get answers to that age old question "Whats for dinner?"  Simply select a c
  - Clear button only appears when the user generates an option.
 
 ## Illustrations
-![Demo](https://www.loom.com/share/518ee521ba004808a9be78fd3b951181)
+![Demo](./assets/mealgen.gif)
 
 ## Deployed Page
 
-Visit the published Hang In There page [here](https://tfoxcollis.github.io/whats-for-dinner/)
+Visit the published Whats for Dinner? [here](https://tfoxcollis.github.io/whats-for-dinner/)
 
 ## Possible Future Extensions
 - Allow users to have a sign in that they can then add and store recipes.
